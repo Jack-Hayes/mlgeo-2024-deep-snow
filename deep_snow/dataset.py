@@ -79,13 +79,6 @@ class Dataset(torch.utils.data.Dataset):
         snowon_vh = torch.from_numpy(db_scale(np.float32(ds.snowon_vh.values)))
         snowoff_vv = torch.from_numpy(db_scale(np.float32(ds.snowoff_vv.values)))
         snowoff_vh = torch.from_numpy(db_scale(np.float32(ds.snowoff_vh.values)))
-<<<<<<< HEAD
-        #snowon_vv_mean = torch.from_numpy(db_scale(np.float32(ds.snowon_vv_mean.values)))
-        #snowon_vh_mean = torch.from_numpy(db_scale(np.float32(ds.snowon_vh_mean.values)))
-        #snowoff_vv_mean = torch.from_numpy(db_scale(np.float32(ds.snowoff_vv_mean.values)))
-        #snowoff_vh_mean = torch.from_numpy(db_scale(np.float32(ds.snowoff_vh_mean.values)))
-=======
->>>>>>> 966802e1660c4ca67f5901143c0e38dca07bd26f
         aerosol_optical_thickness = torch.from_numpy(np.float32(ds.AOT.values))
         coastal_aerosol = torch.from_numpy(np.float32(ds.B01.values))
         blue = torch.from_numpy(np.float32(ds.B02.values))
@@ -111,10 +104,6 @@ class Dataset(torch.utils.data.Dataset):
         longitude = torch.from_numpy(np.float32(ds.longitude.values))
         aso_gap_map = torch.from_numpy(np.float32(ds.aso_gap_map.values))
         rtc_gap_map = torch.from_numpy(np.float32(ds.rtc_gap_map.values))
-<<<<<<< HEAD
-        #rtc_mean_gap_map = torch.from_numpy(np.float32(ds.rtc_mean_gap_map.values))
-=======
->>>>>>> 966802e1660c4ca67f5901143c0e38dca07bd26f
         s2_gap_map = torch.from_numpy(np.float32(ds.s2_gap_map.values))
 
         # calculate some other inputs for our CNN
@@ -137,13 +126,6 @@ class Dataset(torch.utils.data.Dataset):
             snowon_vh = torch.clamp(calc_norm(snowon_vh, self.norm_dict['vh']), 0, 1)
             snowoff_vv = torch.clamp(calc_norm(snowoff_vv, self.norm_dict['vv']), 0, 1)
             snowoff_vh = torch.clamp(calc_norm(snowoff_vh, self.norm_dict['vh']), 0, 1)
-<<<<<<< HEAD
-            #snowon_vv_mean = torch.clamp(calc_norm(snowon_vv_mean, self.norm_dict['vv']), 0, 1)
-            #snowon_vh_mean = torch.clamp(calc_norm(snowon_vh_mean, self.norm_dict['vh']), 0, 1)
-            #snowoff_vv_mean = torch.clamp(calc_norm(snowoff_vv_mean, self.norm_dict['vv']), 0, 1)
-            #snowoff_vh_mean = torch.clamp(calc_norm(snowoff_vh_mean, self.norm_dict['vh']), 0, 1)
-=======
->>>>>>> 966802e1660c4ca67f5901143c0e38dca07bd26f
             aerosol_optical_thickness = torch.clamp(calc_norm(aerosol_optical_thickness, self.norm_dict['AOT']), 0, 1)
             coastal_aerosol = torch.clamp(calc_norm(coastal_aerosol, self.norm_dict['coastal']), 0, 1)
             blue = torch.clamp(calc_norm(blue, self.norm_dict['blue']), 0, 1)
